@@ -40,7 +40,7 @@ def _get_pictures() -> None:
 with DAG(
         dag_id='01_download_rocket_launches',
         start_date=pendulum.today('UTC').add(days=-14),
-        schedule=" */30 * * * *"
+        schedule="*/30 * * * *"
 ):
     download_launches = BashOperator(
         task_id='download_launches',
